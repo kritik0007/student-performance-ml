@@ -19,3 +19,25 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 
 print("Accuracy:", accuracy_score(y_test, predictions))
+
+import matplotlib.pyplot as plt
+
+# Correlation matrix
+print("\nCorrelation Matrix:\n")
+print(df.corr())
+
+# Scatter plot
+plt.figure()
+plt.scatter(df["study_hours"], df["previous_marks"])
+plt.xlabel("Study Hours")
+plt.ylabel("Previous Marks")
+plt.title("Study Hours vs Previous Marks")
+plt.show()
+
+# Attendance vs Result
+plt.figure()
+plt.scatter(df["attendance"], df["result"])
+plt.xlabel("Attendance")
+plt.ylabel("Result (0=Fail, 1=Pass)")
+plt.title("Attendance vs Result")
+plt.show()
